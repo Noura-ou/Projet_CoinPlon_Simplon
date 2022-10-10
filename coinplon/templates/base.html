@@ -31,17 +31,18 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
+        
+        {% block banner %} {% endblock %}
 
-    
-
-        {% block content %}{% endblock %}
-
+        <main id="content" role="main"> 
+          {% block content %} {% endblock %}
+        </main>
+        
         {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/index.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/coinplon.js' %}"></script>
 
         {% block extra_js %}
         {# Override this in templates to add extra javascript #}
         {% endblock %}
-        
     </body>
 </html>
