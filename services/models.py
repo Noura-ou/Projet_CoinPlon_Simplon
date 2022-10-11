@@ -38,3 +38,13 @@ class ServicePage(Page):
         help_text="Choisir une image pour ce service",
         related_name="+"
     )
+
+    #faire apparaitre les trucs dans la page web child
+
+    content_panels = Page.content_panels + [
+        FieldPanel("description"),
+        FieldPanel("internal_page"),
+        FieldPanel("external_page"),
+        FieldPanel("button_text"),
+        FieldPanel("service_image"),
+    ]
