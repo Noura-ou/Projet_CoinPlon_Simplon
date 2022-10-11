@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
-{% load wagtailimages_tags %}
 
+{% extends 'base.html' %}
+{% load wagtailimages_tags %}  {# charger les images#}
 
 {% block content %}
   <div class="row">
@@ -16,27 +16,31 @@
     </div>
   </div>
 
+
   <div class="row mt-4">
+    {% for card in services %} 
     <div class="col-md-6 d-flex align-items-stretch">
       <div class="card mb-3 text-center">
         <a href="@todo">
           <picture>
-            <img src="https://www.fillmurray.com/g/155/300"  class="lazy card-img-top">
+          {% image card.service_image fill-573x370 as card_img %}
+          <img src="{{card_img.url}}" style='width:100%; height: auto;'>
+          {#  <img src="https://www.fillmurray.com/g/155/300"  class="lazy card-img-top"> #}
           </picture>
         </a>
         <div class="card-body py-3 px-3">
           <a href="{{ card.url }}">
-            <h5 class="card-title">card title</h5>
+            <h5 class="card-title">{{card.title}}</h5>
 
-              <p class="card-description">description here</p>
+              <p class="card-description">{{card.description}}</p>
           </a>
           <p class="card-text">
-            <a href="@todo" class="btn btn-link d-inline">More Details</a>
+            <a href="@todo" class="btn btn-link d-inline">{{card.button_text}}</a>
           </p>
         </div>
       </div>
     </div>
+    {% endfor %}
   </div>
 
-  
 {% endblock %}
