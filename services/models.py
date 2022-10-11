@@ -3,6 +3,7 @@ from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel
 
 class ServicesListingPage(Page):
+  # template = 'services/services/services_listing_page.html'
     subtitle = models.TextField(
         blank=True,
         max_length=500

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load wagtailimages_tags wagtailcore_tags %}
+
+{% block content %}
+  <div class="row mb-3">
+    <div class="col-lg-6">
+      <h1 class="cc-inner-title">{{page.title}}</h1>
+      <p class="cc-inner-subtitle cc-service-subtitle">
+        {{page.description}}
+      </p>
+
+        {% if page.internal_page or page.external_page  %}  {# pour afficher le button si l'un des url est pas vide sinn il affiche pas le button#}
+      <a href="{% if page.internal_page %}{{page.internal_page.url}}  {# ajouter .url puisque cest pas un vrai url  #}
+      {% elif page.external_page %}{{page.external_page}}  {# sans ajouter url puisque c'est déjà un lien#}
+      {% else %}#{% endif %}" 
+
+      class="btn btn-primary btn-lg mb-2 mb-lg-0">
+          {{page.button_text}}
+        </a>
+        {% endif %}
+
+    </div>
+    <div class="col-lg-6">
+      <picture>
+        <img src="https://www.fillmurray.com/300/200" style='width:100%; height: auto;'>
+      </picture>
+    </div>
+  </div>
+  
+{% endblock content %}
