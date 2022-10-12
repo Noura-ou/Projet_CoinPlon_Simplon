@@ -67,3 +67,9 @@ class ServicePage(Page):
                 'internal_page': ValidationError('SVP, Sélectionner un lien interne OU un lien externe'),
                 'external_page': ValidationError('SVP, Sélectionner un lien interne OU un lien externe')
             })
+
+        if not self.internal_page and not self.external_page :   #si no one (lien interne et lien externe) renvoie un mesg d erreur
+            raise ValidationError({
+                'internal_page': ValidationError('Vous devez avoir au moins sélectionner un lien interne ou externe'),
+                'external_page': ValidationError('Vous devez avoir au moins sélectionner un lien interne ou externe')
+            })

@@ -32,11 +32,17 @@
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
         
+        {% include "includes/header.html" %}
+
+
         {% block banner %} {% endblock %}
 
         <main id="content" class="container my-4" role="main">   <!-- ajout de class="container my-4" pour centrer notre page -->
           {% block content %} {% endblock %}
         </main>
+
+        {% include "includes/footer.html" %}
+
         
         {# Global javascript #}
         <script type="text/javascript" src="{% static 'js/coinplon.js' %}"></script>
