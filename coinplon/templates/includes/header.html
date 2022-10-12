@@ -12,11 +12,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ml-auto">
+
+              {% for link in "123" %}
               <li class="nav-item active">
-                <a class="nav-link" href="@todo">
+              <a class="nav-link" href="@todo"> LINK {{link}}
                 </a>
               </li>
+              {% endfor %}
         </ul>
       </div>
     </div>
   </nav>
+
+
+
+  
