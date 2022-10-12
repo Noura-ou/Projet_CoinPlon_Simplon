@@ -18,7 +18,9 @@ class ServicesListingPage(Page):
         context = super().get_context(request, *args, **kwargs)
         # Add extra variables and return the updated context
         context['services'] = ServicePage.objects.live().public()
+       # (import pudb; pu.db() ) #pour explorer les variable sur la ligne de commande
         return context
+    
         # on va pouvoir récuperer les informations de service, .live pour prendre juste ce qui est publié, .object : pour recuperer ce qu on cree en service page#}
 
 class ServicePage(Page):

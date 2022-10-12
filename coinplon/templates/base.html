@@ -23,6 +23,8 @@
 
         {# Global stylesheets #}
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">   {# ajout de custom#}
+
 
         {% block extra_css %}
         {# Override this in templates to add extra stylesheets #}
@@ -31,7 +33,7 @@
 
     <body class="{% block body_class %}{% endblock %}">
         {% wagtailuserbar %}
-        
+
         {% include "includes/header.html" %}
 
 
