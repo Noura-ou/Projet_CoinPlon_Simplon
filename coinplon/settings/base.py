@@ -27,6 +27,8 @@ INSTALLED_APPS = [
     "services",
     "flex",
     "temoignage",
+    "streams",
+    'wagtail.contrib.styleguide',
 
 
     "home",
