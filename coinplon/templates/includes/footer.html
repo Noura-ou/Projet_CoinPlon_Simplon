@@ -1,1 +1,68 @@
-<h1> Ceci est un footer </h1>
+{% load static %}
+
+<section
+  class="py-4 mt-lg-5 mt-0"
+  style='background-color: #814ebf; background-image: url("{% static '/images/conact-overlay.png' %}");'>
+  <div class="container">
+    <div class="row align-items-center" >
+      <div class="collg-8 text-lg-left text-center">
+        <h2 class="h2 cc-contat-footer-h2">
+          Global CTA Title
+        </h2>
+        <p class="cc-contact-footer-p mb-0" >
+          Nulla facilisis, risus a rhoncus fermentum, tellus tellus
+          lacinia purus, et dictum nunc justo sit amet elit. Integer
+          placerat tristique nisl. Nam a sapien. Pellentesque
+          condimentum, magna ut suscipit hendrerit, ipsum augue ornare
+          nulla, non luctus diam neque sit amet urna.
+        </p>
+      </div>
+      <div class="col-lg-4 text-lg-right text-center" >
+        <a href="@TODO" class="btn btn-light btn-lg mt-lg-0 mt-3">
+          @TODO
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark py-4 text-light text-md-left text-center cc-footer" >
+  <div class="container" >
+    <div class="row mx-lg-n3" >
+      <div class="px-lg-3 col-lg-3 col-md-6 col-sm-12" >
+        <div class="cc-footer-title" >LINKS</div>
+        {% for i in "123" %}
+          <a class="cc-footer-link-lg d-block"  href="@TODO" >
+            Link #{{i}}
+          </a>
+        {% endfor %}
+      </div>
+
+      <div class="px-lg-2 col-lg-3 col-md-6 col-sm=12">
+        <div class="cc-footer-title">Contact Us</div>
+        @TODO add content
+      </div>
+
+      <div class="px-lg-4 col-lg-3 col-md-6 col-sm=12">
+        <div class="cc-footer-title">Hours</div>
+        @TODO add hours
+      </div>
+
+      <div class="px-lg-3 col-lg-3 col-md-6 col-sm=12">
+        <a href="@TODO" class="cc-footer-social-icon">
+          <img src="{% static 'images/facebook.svg' %}" alt="Facebook">
+        </a>
+        <a href="@TODO" class="cc-footer-social-icon">
+          <img src="{% static 'images/twitter.svg' %}" alt="Twitter">
+        </a>
+        <a href="@TODO" class="cc-footer-social-icon">
+          <img src="{% static 'images/instagram.svg' %}" alt="Instagram">
+        </a>
+        <a href="@TODO" class="cc-footer-social-icon">
+          <img src="{% static 'images/youtube.svg' %}" alt="Youtube">
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
