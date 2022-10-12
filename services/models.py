@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ValidationError
 from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel
 
@@ -57,3 +58,12 @@ class ServicePage(Page):
         FieldPanel("button_text"),
         FieldPanel("service_image"),
     ]
+
+    def clean(self):
+        super().clean()
+
+        if self.internal_page and self.external_page :   #si les deux (lien interne et lien externe) renvoie un mesg d erreur
+            raise ValidationError({
+                'internal_page': ValidationError('SVP, Sélectionner un lien interne OU un lien externe'),
+                'external_page': ValidationError('SVP, Sélectionner un lien interne OU un lien externe')
+            })
