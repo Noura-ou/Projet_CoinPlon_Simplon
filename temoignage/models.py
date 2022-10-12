@@ -1,5 +1,8 @@
 from django.db import models
+from wagtail.snippets.models import register_snippet
 
+
+@register_snippet  #pour ajouter une option à la classe
 # Create your models here.
 class Temoignage(models.Model):
     quote = models.TextField(
